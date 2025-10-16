@@ -23,11 +23,14 @@
             <div class="container-fluid align-items-center">
                 <div class="d-flex align-items-center gap-3">
                     <div class="site-brand d-flex align-items-center">
-                        <span>CommunityHall</span>
+                        <span><img src="assets/images/logo/logoo.png" height="24" alt=""></span>
                     </div>
-                    <div class="d-none d-md-flex align-items-center text-muted"><i class="ri-map-pin-line me-1"></i>
-                        Your
-                        City</div>
+                    <div class="d-none d-md-flex  ms-3 location align-items-center"><i class="ri-map-pin-line me-1"></i>
+                        <span class="d-flex flex-column">
+                            <span>Kolkata</span>
+                            <small class="text-muted">West Bengal</small>
+                        </span>
+                    </div>
                 </div>
                 <button class="navbar-toggler shadow-none p-0 border-0" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -61,11 +64,15 @@
                             </li>
                         </ul>
                         <div class="d-flex align-items-center gap-3">
-                            <div class="input-group">
-                                <span class="input-group-text bg-white border-0"><i class="ri-search-line"></i></span>
-                                <input type="text" class="form-control border-0" placeholder="Search...">
-                            </div>
-                            <button class="btn btn-success rounded-circle profile"></button>
+                            <form class="position-relative search-area">
+                                <input type="text" name="search" class="form-control shadow-none pe-5"
+                                    placeholder="Search...">
+                                <button
+                                    class="position-absolute p-0 bg-transparent border-0 outline-0 top-50 translate-middle-y"><i
+                                        class="ri-search-line"></i></button>
+                            </form>
+                            <img src="assets/images/logo/profile-icon.svg" alt="" class="profile" height="40">
+
                         </div>
                     </div>
                 </div>
@@ -120,22 +127,22 @@
       <!-- Right Sidebar -->
       <div class="col-lg-4">
         <aside class="event-sidebar main-sticky">
-          <div class="card shadow-sm border-0 rounded-3 bg-light">
+          <div class="card shadow-sm  rounded-3 ">
             <div class="card-body p-4">
               <h5 class="card-title mb-4">Event Information</h5>
 
               <ul class="list-unstyled">
-                <li class="mb-3"><i class="ri-calendar-event-line me-2 text-primary"></i><strong>Date:</strong> 25th
+                <li class="mb-3"><i class="ri-calendar-event-line me-2 primary-color"></i><strong>Date:</strong> 25th
                   October 2025</li>
-                <li class="mb-3"><i class="ri-time-line me-2 text-primary"></i><strong>Start Time:</strong> 5:00 PM</li>
-                <li class="mb-3"><i class="ri-time-fill me-2 text-primary"></i><strong>Duration:</strong> 5 Hours</li>
-                <li class="mb-3"><i class="ri-group-line me-2 text-primary"></i><strong>Expected Guests:</strong> 200+
+                <li class="mb-3"><i class="ri-time-line me-2 primary-color"></i><strong>Start Time:</strong> 5:00 PM</li>
+                <li class="mb-3"><i class="ri-time-fill me-2 primary-color"></i><strong>Duration:</strong> 5 Hours</li>
+                <li class="mb-3"><i class="ri-group-line me-2 primary-color"></i><strong>Expected Guests:</strong> 200+
                   attendees</li>
               </ul>
 
               <hr>
 
-              <h6 class="fw-semibold mb-2"><i class="ri-information-line me-2 text-primary"></i>About the Event</h6>
+              <h6 class="fw-semibold mb-2"><i class="ri-information-line me-2 primary-color"></i>About the Event</h6>
               <p class="text-muted mb-0">A special evening to celebrate our collective achievements, build stronger
                 bonds, and enjoy quality time with our extended work family. Food, music, and memories — all in one
                 place!</p>

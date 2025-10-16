@@ -1,16 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
-    --bg: #ffffff;
-    --muted: #6b7280;
-    --purple: #6C4FFB;
-    --purple-100: rgba(108, 79, 251, 0.06);
-    --card-bg: #ffffff;
-    --surface: #f6f7fb;
-    --radius: 12px;
+    --primary-color: #f69323;
+    --secondary-color: #1E547C;
+    --white-color: #FFFFFF;
+    --purple-100: rgba(246, 147, 35, 0.06);
 }
-
-
 
 body {
     background: var(--surface);
@@ -20,57 +15,34 @@ body {
 }
 
 
-
 *,
-
 html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-
 html {
     scroll-behavior: smooth;
 }
 
-
-
 a {
-
     text-decoration: none;
-
     color: inherit;
-
 }
-
-
 
 h1,
-
 h2,
-
 h3,
-
 h4,
-
 h5,
-
 h6,
-
 ul {
-
     margin-bottom: 0;
-
 }
 
-
-
 ul {
-
     list-style: none;
-
 }
 
 .container-fluid {
@@ -107,7 +79,8 @@ ul {
 /* Navbar small */
 .navbar {
     background: transparent;
-    padding: 12px 0
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .navbar .nav-link {
@@ -120,6 +93,28 @@ ul {
     width: 40px;
     height: 40px;
     object-fit: cover
+}
+
+.location span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.location small {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.location i {
+    font-size: 2.05rem;
+    color: var(--secondary-color);
+}
+
+.search-area button {
+    right: 0.8rem;
+}
+.branding {
+    width: 340px;
 }
 
 /* Hero */

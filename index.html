@@ -18,13 +18,16 @@
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid align-items-center">
-                <div class="d-flex align-items-center gap-3">
+                <div class="d-flex align-items-center gap-3 branding">
                     <div class="site-brand d-flex align-items-center">
-                        <span>CommunityHall</span>
+                        <span><img src="assets/images/logo/logoo.png" height="24" alt=""></span>
                     </div>
-                    <div class="d-none d-md-flex align-items-center text-muted"><i class="ri-map-pin-line me-1"></i>
-                        Your
-                        City</div>
+                    <div class="d-none d-md-flex  ms-3 location align-items-center"><i class="ri-map-pin-line me-1"></i>
+                        <span class="d-flex flex-column">
+                            <span>Kolkata</span>
+                            <small class="text-muted">West Bengal</small>
+                        </span>
+                    </div>
                 </div>
                 <button class="navbar-toggler shadow-none p-0 border-0" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -40,7 +43,7 @@
                                 class="ri-close-line fs-1 text-danger fw-normal"></i></button>
                     </div>
                     <div class="offcanvas-body">
-                        <ul class="navbar-nav me-auto ms-5 align-items-lg-center">
+                        <ul class="navbar-nav mx-auto align-items-lg-center">
                             <li class="nav-item">
                                 <a class="nav-link" href="index.html">Home</a>
                             </li>
@@ -58,11 +61,15 @@
                             </li>
                         </ul>
                         <div class="d-flex align-items-center gap-3">
-                            <div class="input-group">
-                                <span class="input-group-text bg-white border-0"><i class="ri-search-line"></i></span>
-                                <input type="text" class="form-control border-0" placeholder="Search...">
-                            </div>
-                            <button class="btn btn-success rounded-circle profile"></button>
+                            <form class="position-relative search-area">
+                                <input type="text" name="search" class="form-control shadow-none pe-5"
+                                    placeholder="Search...">
+                                <button
+                                    class="position-absolute p-0 bg-transparent border-0 outline-0 top-50 translate-middle-y"><i
+                                        class="ri-search-line"></i></button>
+                            </form>
+                            <img src="assets/images/logo/profile-icon.svg" alt="" class="profile" height="40">
+
                         </div>
                     </div>
                 </div>
@@ -212,7 +219,6 @@
                             <th>#</th>
                             <th>Booking ID</th>
                             <th>Hall Name</th>
-                            <th>Customer</th>
                             <th>Date</th>
                             <th>Amount (₹)</th>
                             <th>Status</th>
@@ -224,7 +230,6 @@
                             <td>1</td>
                             <td>BK202501</td>
                             <td>Community Hall A</td>
-                            <td>Ravi Kumar</td>
                             <td>2025-10-10</td>
                             <td>5,000</td>
                             <td><span class="status-paid">Paid</span></td>
@@ -239,7 +244,6 @@
                             <td>2</td>
                             <td>BK202502</td>
                             <td>Community Hall B</td>
-                            <td>Anita Sharma</td>
                             <td>2025-10-12</td>
                             <td>7,500</td>
                             <td><span class="status-pending">Pending</span></td>
@@ -254,7 +258,6 @@
                             <td>3</td>
                             <td>BK202503</td>
                             <td>Community Hall C</td>
-                            <td>Mohammed Irfan</td>
                             <td>2025-10-15</td>
                             <td>6,000</td>
                             <td><span class="status-paid">Paid</span></td>
@@ -269,7 +272,6 @@
                             <td>4</td>
                             <td>BK202504</td>
                             <td>Community Hall D</td>
-                            <td>Priya Nair</td>
                             <td>2025-10-16</td>
                             <td>4,800</td>
                             <td><span class="status-pending">Pending</span></td>
