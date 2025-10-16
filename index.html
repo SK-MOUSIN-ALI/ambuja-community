@@ -10,6 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Remix Icon -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/libs/slick/slick-theme.css">
+    <link rel="stylesheet" href="assets/libs/slick/slick.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         /* Topbar */
@@ -18,244 +21,280 @@
 
 <body>
 
-    <!-- Top bar with brand + city + search -->
-    <div class="topbar">
-        <div class="container d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center gap-3">
-                <div class="site-brand d-flex align-items-center"><img src="" alt=""
-                        style="width:38px;height:38px;border-radius:8px;background:var(--purple);margin-right:8px">
-                    <span>CommunityHall</span>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid align-items-center">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="site-brand d-flex align-items-center">
+                        <span>CommunityHall</span>
+                    </div>
+                    <div class="d-none d-md-flex align-items-center text-muted"><i class="ri-map-pin-line me-1"></i>
+                        Your
+                        City</div>
                 </div>
-                <div class="d-none d-md-flex align-items-center text-muted"><i class="ri-map-pin-line me-1"></i> Your
-                    City</div>
-            </div>
-            <div class="d-flex align-items-center gap-3">
-                <div class="input-group search-input">
-                    <span class="input-group-text bg-white border-0"><i class="ri-search-line"></i></span>
-                    <input class="form-control border-0" placeholder="Search events, bills, members"
-                        aria-label="search">
+                <button class="navbar-toggler shadow-none p-0 border-0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fs-3 text-dark"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header justify-content-between">
+                        <div class="offcanvas-title" id="offcanvasNavbarLabel"><a href="#"><img
+                                    src="assets/images/logo.png" alt="Brand Logo"></a></div>
+                        <button type="button" class="my-btn-close lh-1 bg-transparent outline-none border-0"
+                            data-bs-dismiss="offcanvas" aria-label="Close"><i
+                                class="ri-close-line fs-1 text-danger fw-normal"></i></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav me-auto ms-5 align-items-lg-center">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Bills</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Delegation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Profile</a>
+                            </li>
+                        </ul>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-0"><i class="ri-search-line"></i></span>
+                                <input type="text" class="form-control border-0" placeholder="Search...">
+                            </div>
+                            <button class="btn btn-success rounded-circle profile"></button>
+                        </div>
+                    </div>
                 </div>
-                <div class="d-none d-sm-block"><button class="btn btn-outline-secondary btn-sm">Log in</button></div>
             </div>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <!-- Nav -->
-    <nav class="main-nav">
-        <div class="container">
-            <ul class="nav">
-                <li class="nav-item"><a class="nav-link active" href="#events">Events</a></li>
-                <li class="nav-item"><a class="nav-link" href="#bills">Bills</a></li>
-                <li class="nav-item"><a class="nav-link" href="#delegation">Delegation</a></li>
-                <li class="nav-item"><a class="nav-link" href="#profile">Profile</a></li>
-                <li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- HERO / Offers carousel -->
-    <header class="hero">
-        <div class="container">
+    <section class="hero section-padding">
+        <div class="container-fluid">
             <div class="section-head">
-                <h4 class="offers-title">Offers on Activities</h4>
+                <h4 class="title">Upcoming Events</h4>
                 <div class="d-flex align-items-center gap-2">
-                    <button class="btn btn-sm btn-outline-secondary" id="offers-prev"><i
-                            class="ri-arrow-left-s-line"></i></button>
-                    <button class="btn btn-sm btn-outline-secondary" id="offers-next"><i
-                            class="ri-arrow-right-s-line"></i></button>
+                    <button class="btn btn-sm btn-outline-secondary" id="offers-prev">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary" id="offers-next">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </button>
                 </div>
             </div>
 
             <div class="carousel-row position-relative">
                 <div class="cards-scroll" id="offersScroll">
-                    <!-- big offer cards -->
-                    <div class="offer-card">
-                        <img src="https://images.unsplash.com/photo-1542219550-8f0b1b2f9010?auto=format&fit=crop&w=800&q=60"
-                            alt="event">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-start">
-                                <div>
-                                    <h5 style="margin:0">Playstation Hub</h5>
-                                    <p class="small text-muted mb-1">Gaming night — 7:00 PM</p>
-                                </div>
-                                <span class="tag">HOT</span>
-                            </div>
-                            <p class="small text-muted mt-2">Bring your controllers and join the tournament.</p>
-                        </div>
-                    </div>
 
                     <div class="offer-card">
-                        <img src="https://images.unsplash.com/photo-1529429617124-83f4b93b7d6f?auto=format&fit=crop&w=800&q=60"
-                            alt="event">
+                        <img src="assets/images/hall/hall-1.jpg" class="img-fluid" alt="event">
                         <div class="card-body">
-                            <h5 style="margin:0">Play and Plate — Cooking Class</h5>
+                            <h5>Play and Plate — Cooking Class</h5>
                             <p class="small text-muted mb-1">Sat, 6:00 PM</p>
-                            <p class="small text-muted">Family cooking session in Community Hall.</p>
+                        </div>
+                    </div>
+                    <div class="offer-card">
+                        <img src="assets/images/hall/hall-2.jpg" class="img-fluid" alt="event">
+                        <div class="card-body">
+                            <h5>Play and Plate — Cooking Class</h5>
+                            <p class="small text-muted mb-1">Sat, 6:00 PM</p>
                         </div>
                     </div>
 
                     <div class="offer-card">
-                        <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=60"
-                            alt="event">
+                        <img src="assets/images/hall/hall-3.jpg" class="img-fluid" alt="event">
                         <div class="card-body">
-                            <h5 style="margin:0">Howl VR Gaming Zone</h5>
+                            <h5>Howl VR Gaming Zone</h5>
                             <p class="small text-muted mb-1">Sun, 5:00 PM</p>
-                            <p class="small text-muted">VR experience for youth — limited slots.</p>
                         </div>
                     </div>
 
                     <div class="offer-card">
-                        <img src="https://images.unsplash.com/photo-1491933383169-95b6f5bd21c1?auto=format&fit=crop&w=800&q=60"
-                            alt="event">
+                        <img src="assets/images/hall/hall-4.jpg" class="img-fluid" alt="event">
                         <div class="card-body">
-                            <h5 style="margin:0">Neighborhood Meet & Dinner</h5>
+                            <h5>Neighborhood Meet & Dinner</h5>
                             <p class="small text-muted mb-1">Sat, Oct 25 — 6:00 PM</p>
-                            <p class="small text-muted">Potluck dinner and games in the main hall.</p>
+                        </div>
+                    </div>
+
+                    <div class="offer-card">
+                        <img src="assets/images/hall/hall-3.jpg" class="img-fluid" alt="event">
+                        <div class="card-body">
+                            <h5>Community Dance Night</h5>
+                            <p class="small text-muted mb-1">Fri, 8:00 PM</p>
                         </div>
                     </div>
 
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main class="container">
 
-        <!-- Top movies / highlights style row (adapted) -->
-        <section id="highlights">
-            <div class="section-head">
-                <h4>Top Activities Near You</h4>
-                <a href="#events" class="text-decoration-none small text-muted">See all</a>
-            </div>
-            <div class="row g-3">
-                <div class="col-6 col-md-3">
-                    <div class="mini-card text-center">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=60"
-                            style="width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px">
-                        <h6 style="margin:0">Karaoke Night</h6>
-                        <p class="small text-muted">Community Hall</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="mini-card text-center">
-                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=60"
-                            style="width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px">
-                        <h6 style="margin:0">Yoga Morning</h6>
-                        <p class="small text-muted">Open Terrace</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="mini-card text-center">
-                        <img src="https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee?auto=format&fit=crop&w=400&q=60"
-                            style="width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px">
-                        <h6 style="margin:0">Art Workshop</h6>
-                        <p class="small text-muted">Kids Club</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="mini-card text-center">
-                        <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=400&q=60"
-                            style="width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px">
-                        <h6 style="margin:0">Cooking Class</h6>
-                        <p class="small text-muted">Community Kitchen</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Happening this week — horizontal carousel with cards like district -->
-        <section id="week">
-            <div class="section-head">
-                <h4>Happening this week</h4>
-                <div class="d-flex gap-2">
-                    <button class="btn btn-sm btn-outline-secondary" id="week-prev"><i
-                            class="ri-arrow-left-s-line"></i></button>
-                    <button class="btn btn-sm btn-outline-secondary" id="week-next"><i
-                            class="ri-arrow-right-s-line"></i></button>
+    <section class="hero activity section-padding">
+        <div class="container-fluid">
+            <div class="section-head d-flex justify-content-between align-items-center mb-3">
+                <h4 class="title m-0">Daily Activities</h4>
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn btn-sm btn-outline-secondary" id="activities-prev">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary" id="activities-next">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </button>
                 </div>
             </div>
 
-            <div class="carousel-row">
-                <div class="cards-scroll" id="weekScroll">
-                    <div class="mini-card" style="min-width:220px">
-                        <h6 style="margin:0">Community Cleanup</h6>
-                        <p class="small text-muted mb-1">Sat, 8:00 AM</p>
-                        <p class="small text-muted">Volunteer to clean the park and hall surroundings.</p>
+            <div class="carousel-row position-relative">
+                <div class="cards-scroll" id="activitiesScroll">
+
+                    <div class="offer-card">
+                        <img src="assets/images/activity/act-1.jpg" class="img-fluid" alt="Yoga Class">
+                        <div class="card-body">
+                            <h5>Morning Yoga Session</h5>
+                            <p class="small text-muted mb-1">Mon–Fri, 6:30 AM</p>
+                        </div>
                     </div>
 
-                    <div class="mini-card" style="min-width:220px">
-                        <h6 style="margin:0">Photography Walk</h6>
-                        <p class="small text-muted mb-1">Sun, 6:00 AM</p>
-                        <p class="small text-muted">Meetup for local photographers.</p>
+                    <div class="offer-card">
+                        <img src="assets/images/activity/act-2.jpg" class="img-fluid" alt="Cooking Class">
+                        <div class="card-body">
+                            <h5>Healthy Kitchen — Cooking Class</h5>
+                            <p class="small text-muted mb-1">Tue & Thu, 5:30 PM</p>
+                        </div>
                     </div>
 
-                    <div class="mini-card" style="min-width:220px">
-                        <h6 style="margin:0">Board Games Night</h6>
-                        <p class="small text-muted mb-1">Fri, 7:00 PM</p>
-                        <p class="small text-muted">Bring your favourite board games.</p>
+                    <div class="offer-card">
+                        <img src="assets/images/activity/act-1.jpg" class="img-fluid" alt="Art Workshop">
+                        <div class="card-body">
+                            <h5>Creative Art Workshop</h5>
+                            <p class="small text-muted mb-1">Wed, 3:00 PM</p>
+                        </div>
                     </div>
 
-                    <div class="mini-card" style="min-width:220px">
-                        <h6 style="margin:0">Music Jam</h6>
-                        <p class="small text-muted mb-1">Sun, 5:00 PM</p>
-                        <p class="small text-muted">Open mic for local talent.</p>
+                    <div class="offer-card">
+                        <img src="assets/images/activity/act-1.jpg" class="img-fluid" alt="Dance Session">
+                        <div class="card-body">
+                            <h5>Zumba & Dance Fitness</h5>
+                            <p class="small text-muted mb-1">Sat, 7:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="offer-card">
+                        <img src="assets/images/activity/act-1.jpg" class="img-fluid" alt="Gardening Club">
+                        <div class="card-body">
+                            <h5>Green Fingers — Gardening Club</h5>
+                            <p class="small text-muted mb-1">Sun, 9:00 AM</p>
+                        </div>
                     </div>
 
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- More sections: Timeless Hits, Music Events, Comedy, Sports (skeletons similar to district) -->
-        <section id="timeless">
-            <div class="section-head">
-                <h4>Timeless Hits</h4>
-                <a class="small text-muted" href="#">See all</a>
+    <section class="section-padding bills">
+        <div class="container-fluid">
+            <div class="section-head d-flex justify-content-between align-items-center">
+                <h3 class="fw-bold m-0">Community Hall Bill Payments</h3>
+                <button class="btn btn-primary">
+                    <i class="ri-add-line me-1"></i> New Payment
+                </button>
             </div>
-            <div class="row g-3">
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="mini-card" style="height:180px"></div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="mini-card" style="height:180px"></div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="mini-card" style="height:180px"></div>
-                </div>
-            </div>
-        </section>
 
-        <section id="music">
-            <div class="section-head">
-                <h4>Discover the best of Music Events</h4>
-                <div class="d-flex gap-2">
-                    <button class="btn btn-sm btn-outline-secondary" id="music-prev"><i
-                            class="ri-arrow-left-s-line"></i></button>
-                    <button class="btn btn-sm btn-outline-secondary" id="music-next"><i
-                            class="ri-arrow-right-s-line"></i></button>
-                </div>
+            <div class="table-responsive pt-2">
+                <table id="billTable" class="table table-striped align-middle">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Booking ID</th>
+                            <th>Hall Name</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Amount (₹)</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>BK202501</td>
+                            <td>Community Hall A</td>
+                            <td>Ravi Kumar</td>
+                            <td>2025-10-10</td>
+                            <td>5,000</td>
+                            <td><span class="status-paid">Paid</span></td>
+                            <td>
+                                <button class="btn btn-outline-primary btn-sm btn-action"><i
+                                        class="ri-eye-line"></i></button>
+                                <button class="btn btn-outline-success btn-sm btn-action"><i
+                                        class="ri-download-2-line"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>BK202502</td>
+                            <td>Community Hall B</td>
+                            <td>Anita Sharma</td>
+                            <td>2025-10-12</td>
+                            <td>7,500</td>
+                            <td><span class="status-pending">Pending</span></td>
+                            <td>
+                                <button class="btn btn-outline-primary btn-sm btn-action"><i
+                                        class="ri-eye-line"></i></button>
+                                <button class="btn btn-outline-warning btn-sm btn-action"><i
+                                        class="ri-wallet-3-line"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>BK202503</td>
+                            <td>Community Hall C</td>
+                            <td>Mohammed Irfan</td>
+                            <td>2025-10-15</td>
+                            <td>6,000</td>
+                            <td><span class="status-paid">Paid</span></td>
+                            <td>
+                                <button class="btn btn-outline-primary btn-sm btn-action"><i
+                                        class="ri-eye-line"></i></button>
+                                <button class="btn btn-outline-success btn-sm btn-action"><i
+                                        class="ri-download-2-line"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>BK202504</td>
+                            <td>Community Hall D</td>
+                            <td>Priya Nair</td>
+                            <td>2025-10-16</td>
+                            <td>4,800</td>
+                            <td><span class="status-pending">Pending</span></td>
+                            <td>
+                                <button class="btn btn-outline-primary btn-sm btn-action"><i
+                                        class="ri-eye-line"></i></button>
+                                <button class="btn btn-outline-warning btn-sm btn-action"><i
+                                        class="ri-wallet-3-line"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="carousel-row">
-                <div class="cards-scroll" id="musicScroll">
-                    <div class="mini-card" style="min-width:260px">
-                        <h6 style="margin:0">Open Mic Night</h6>
-                        <p class="small text-muted">Live at Community Hall</p>
-                    </div>
-                    <div class="mini-card" style="min-width:260px">
-                        <h6 style="margin:0">Classical Evening</h6>
-                        <p class="small text-muted">Acoustic performances.</p>
-                    </div>
-                    <div class="mini-card" style="min-width:260px">
-                        <h6 style="margin:0">DJ Night</h6>
-                        <p class="small text-muted">Dance floor & lights.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
 
     <footer>
-        <div class="container d-flex justify-content-between align-items-center">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
             <div>
                 <strong style="color:#fff">Community Hall</strong>
                 <div class="small text-light" style="color:rgba(255,255,255,0.6)">Manage events • Book halls • Connect
@@ -268,34 +307,23 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/libs/jquery/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/slick/slick.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="assets/js/script.js"></script>
     <script>
-        // helper: scroll container by width
-        function scrollContainer(id, direction) {
-            const el = document.getElementById(id);
-            if (!el) return;
-            const width = el.clientWidth;
-            el.scrollBy({ left: direction * (width * 0.6), behavior: 'smooth' });
-        }
-
-        document.getElementById('offers-next').addEventListener('click', function () { scrollContainer('offersScroll', 1) });
-        document.getElementById('offers-prev').addEventListener('click', function () { scrollContainer('offersScroll', -1) });
-
-        document.getElementById('week-next').addEventListener('click', function () { scrollContainer('weekScroll', 1) });
-        document.getElementById('week-prev').addEventListener('click', function () { scrollContainer('weekScroll', -1) });
-
-        document.getElementById('music-next').addEventListener('click', function () { scrollContainer('musicScroll', 1) });
-        document.getElementById('music-prev').addEventListener('click', function () { scrollContainer('musicScroll', -1) });
-
-        // make sure horizontal areas don't capture vertical touch scroll issues
-        document.querySelectorAll('.cards-scroll').forEach(function (sc) {
-            sc.addEventListener('wheel', function (evt) {
-                if (evt.deltaY == 0) return;
-                evt.preventDefault();
-                sc.scrollLeft += evt.deltaY;
-            })
-        })
+        $(document).ready(function () {
+            $('#billTable').DataTable({
+                pageLength: 5,
+                order: [[0, 'asc']],
+                language: {
+                    search: "_INPUT_",
+                    searchPlaceholder: "Search bills..."
+                }
+            });
+        });
     </script>
 </body>
 

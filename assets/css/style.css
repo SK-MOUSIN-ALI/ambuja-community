@@ -16,7 +16,7 @@ body {
     background: var(--surface);
     font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
     margin: 0;
-    color: #0f172a
+    color: #121212
 }
 
 
@@ -73,7 +73,13 @@ ul {
 
 }
 
+.container-fluid {
+    padding: 0 14rem;
+}
 
+.section-padding {
+    padding: 50px 0;
+}
 
 .pointer {
     cursor: pointer;
@@ -83,7 +89,7 @@ ul {
     color: var(--primary-color) !important;
 }
 
-.topbar {
+.header {
     background: linear-gradient(180deg, rgba(108, 79, 251, 0.06), rgba(108, 79, 251, 0.02));
     padding: 10px 0
 }
@@ -99,30 +105,32 @@ ul {
 }
 
 /* Navbar small */
-.main-nav {
+.navbar {
     background: transparent;
     padding: 12px 0
 }
 
-.main-nav .nav-link {
-    color: var(--muted);
-    font-weight: 600
+.navbar .nav-link {
+    color: #121212;
+    font-weight: 500;
+    margin: 0 0.5rem;
 }
 
-.main-nav .nav-link.active {
-    color: var(--purple)
+.navbar .profile {
+    width: 40px;
+    height: 40px;
+    object-fit: cover
 }
 
 /* Hero */
 .hero {
     background: linear-gradient(180deg, var(--purple-100), #fff);
-    padding: 26px 0
 }
 
-.hero .offers-title {
+.title {
     font-weight: 700;
     color: #0b1220;
-    margin-bottom: 18px
+    margin-bottom: 0
 }
 
 /* Big carousel */
@@ -147,18 +155,25 @@ ul {
     background: var(--card-bg);
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
-    overflow: hidden
+    overflow: hidden;
+    margin: 0.75rem;
+    margin-top: 0;
+}
+
+.offer-card .card-body {
+    padding: 1rem;
 }
 
 .offer-card img {
     width: 100%;
-    height: 160px;
+    aspect-ratio: 4/3;
     object-fit: cover;
     display: block
 }
 
-.offer-card .card-body {
-    padding: 12px
+.offer-card h5 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
 }
 
 .tag {
@@ -178,16 +193,11 @@ ul {
     box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04)
 }
 
-/* section spacing */
-section {
-    padding: 28px 0
-}
-
 .section-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 12px
+    margin-bottom: 1.5rem;
 }
 
 .section-head h4 {
@@ -214,16 +224,37 @@ footer {
     background: #0b1220;
     color: #fff;
     padding: 30px 0;
-    margin-top: 40px
 }
 
-/* responsive tweaks */
-@media(min-width:1200px) {
-    .offer-card {
-        min-width: 320px
-    }
 
-    .offer-card img {
-        height: 200px
-    }
+
+
+.table thead th {
+    background-color: #f3f4f6;
+}
+
+.btn-action {
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+}
+
+.status-paid {
+    color: #198754;
+    font-weight: 600;
+}
+
+.status-pending {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.table thead th {
+    background-color: #001f5c;
+    color: #fff;
+    font-weight: 500;
+}
+
+div.table-responsive>div.dataTables_wrapper>div.row {
+    margin: 0;
+    margin-bottom: 1rem;
 }
