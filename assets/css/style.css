@@ -158,6 +158,7 @@ ul {
     overflow: hidden;
     margin: 0.75rem;
     margin-top: 0;
+    display: block;
 }
 
 .offer-card .card-body {
@@ -257,4 +258,13 @@ footer {
 div.table-responsive>div.dataTables_wrapper>div.row {
     margin: 0;
     margin-bottom: 1rem;
+}
+
+.event-details {
+    background: linear-gradient(180deg, var(--purple-100), #fff);
+}
+
+.main-sticky {
+    position: sticky;
+    top: 100px;
 }
