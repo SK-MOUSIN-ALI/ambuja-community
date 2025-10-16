@@ -1,5 +1,5 @@
 $('#offersScroll ').slick({
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     infinite: true,
     arrows: false,
@@ -29,7 +29,7 @@ $('#offers-next').on('click', function () {
     $('#offersScroll').slick('slickNext');
 });
 $('#activitiesScroll ').slick({
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     infinite: true,
     arrows: false,

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Community Hall</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/libs/slick/slick-theme.css">
     <link rel="stylesheet" href="assets/libs/slick/slick.css">
@@ -77,133 +77,215 @@
         </nav>
     </header>
 
-
     <section class="hero section-padding">
         <div class="container-fluid">
-            <div class="section-head">
-                <h4 class="title">Upcoming Events</h4>
-                <div class="d-flex align-items-center gap-2">
-                    <button class="btn btn-sm btn-outline-secondary" id="offers-prev">
-                        <i class="ri-arrow-left-s-line"></i>
-                    </button>
-                    <button class="btn btn-sm btn-outline-secondary" id="offers-next">
-                        <i class="ri-arrow-right-s-line"></i>
-                    </button>
+            <div class="row">
+                <div class="col-lg-9 pe-lg-5">
+                    <section class="">
+                        <div class="section-head px-2">
+                            <h4 class="title">Upcoming Events</h4>
+                            <div class="d-flex align-items-center gap-2">
+                                <button class="btn btn-sm btn-outline-secondary" id="offers-prev">
+                                    <i class="ri-arrow-left-s-line"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary" id="offers-next">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-row position-relative">
+                            <div class="cards-scroll" id="offersScroll">
+
+                                <a class="offer-card" href="event-dets.html">
+                                    <img src="assets/images/hall/hall-1.jpg" class="img-fluid" alt="event">
+                                    <div class="card-body">
+                                        <h5>Play and Plate — Cooking Class</h5>
+                                        <p class="small text-muted mb-1">Sat, 6:00 PM</p>
+                                    </div>
+                                </a>
+                                <div class="offer-card">
+                                    <img src="assets/images/hall/hall-2.jpg" class="img-fluid" alt="event">
+                                    <div class="card-body">
+                                        <h5>Play and Plate — Cooking Class</h5>
+                                        <p class="small text-muted mb-1">Sat, 6:00 PM</p>
+                                    </div>
+                                </div>
+
+                                <div class="offer-card">
+                                    <img src="assets/images/hall/hall-3.jpg" class="img-fluid" alt="event">
+                                    <div class="card-body">
+                                        <h5>Howl VR Gaming Zone</h5>
+                                        <p class="small text-muted mb-1">Sun, 5:00 PM</p>
+                                    </div>
+                                </div>
+
+                                <div class="offer-card">
+                                    <img src="assets/images/hall/hall-4.jpg" class="img-fluid" alt="event">
+                                    <div class="card-body">
+                                        <h5>Neighborhood Meet & Dinner</h5>
+                                        <p class="small text-muted mb-1">Sat, Oct 25 — 6:00 PM</p>
+                                    </div>
+                                </div>
+
+                                <div class="offer-card">
+                                    <img src="assets/images/hall/hall-3.jpg" class="img-fluid" alt="event">
+                                    <div class="card-body">
+                                        <h5>Community Dance Night</h5>
+                                        <p class="small text-muted mb-1">Fri, 8:00 PM</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                    <section class="activity section-padding pb-0">
+                        <div class="section-head d-flex justify-content-between align-items-center mb-3 px-2">
+                            <h4 class="title m-0">Daily Activities</h4>
+                            <div class="d-flex align-items-center gap-2">
+                                <button class="btn btn-sm btn-outline-secondary" id="activities-prev">
+                                    <i class="ri-arrow-left-s-line"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary" id="activities-next">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-row position-relative">
+                            <div class="cards-scroll" id="activitiesScroll">
+
+                                <a href="#" class="inner-contain">
+                                    <img src="assets/images/activity/act-1.jpg" class="img-fluid" alt="Yoga Classes">
+                                    <div class="layer">
+                                        <h3 class="my-font">Yoga Classes</h3>
+                                        <p>Join our relaxing yoga sessions to improve flexibility and peace of mind.</p>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="inner-contain">
+                                    <img src="assets/images/activity/act-2.jpg" class="img-fluid"
+                                        alt="Cooking Workshop">
+                                    <div class="layer">
+                                        <h3 class="my-font">Cooking Workshop</h3>
+                                        <p>Discover fun cooking classes and learn new recipes with local chefs.</p>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="inner-contain">
+                                    <img src="assets/images/activity/act-1.jpg" class="img-fluid" alt="Dance Practice">
+                                    <div class="layer">
+                                        <h3 class="my-font">Dance Practice</h3>
+                                        <p>Get moving with energetic dance sessions open to all skill levels.</p>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="inner-contain">
+                                    <img src="assets/images/activity/act-2.jpg" class="img-fluid"
+                                        alt="Art & Craft Workshop">
+                                    <div class="layer">
+                                        <h3 class="my-font">Art & Craft Workshop</h3>
+                                        <p>Unleash your creativity with our weekend art and craft activities.</p>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="inner-contain">
+                                    <img src="assets/images/activity/act-1.jpg" class="img-fluid"
+                                        alt="Music & Karaoke Night">
+                                    <div class="layer">
+                                        <h3 class="my-font">Music & Karaoke Night</h3>
+                                        <p>Enjoy live music and karaoke evenings with friends and neighbors.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </div>
 
-            <div class="carousel-row position-relative">
-                <div class="cards-scroll" id="offersScroll">
-
-                    <a class="offer-card" href="event-dets.html">
-                        <img src="assets/images/hall/hall-1.jpg" class="img-fluid" alt="event">
-                        <div class="card-body">
-                            <h5>Play and Plate — Cooking Class</h5>
-                            <p class="small text-muted mb-1">Sat, 6:00 PM</p>
+                <div class="col-lg-3">
+                    <!-- Profile Card -->
+                    <div class="profile-card mb-4 shadow-sm rounded-4 bg-white p-3 text-center">
+                        <div class="profile-header position-relative">
+                            <button
+                                class="btn-light btn btn-sm position-absolute top-0 end-0 rounded-pill px-3 mt-3 me-3">
+                                Edit <i class="ri-edit-line ms-1"></i>
+                            </button>
+                            <div class="profile-pic mb-3 mt-3">
+                                <img src="assets/images/logo/profile-icon.svg" alt="Avatar"
+                                    class="img-fluid rounded-circle" width="100">
+                            </div>
                         </div>
-                    </a>
-                    <div class="offer-card">
-                        <img src="assets/images/hall/hall-2.jpg" class="img-fluid" alt="event">
-                        <div class="card-body">
-                            <h5>Play and Plate — Cooking Class</h5>
-                            <p class="small text-muted mb-1">Sat, 6:00 PM</p>
-                        </div>
-                    </div>
 
-                    <div class="offer-card">
-                        <img src="assets/images/hall/hall-3.jpg" class="img-fluid" alt="event">
-                        <div class="card-body">
-                            <h5>Howl VR Gaming Zone</h5>
-                            <p class="small text-muted mb-1">Sun, 5:00 PM</p>
-                        </div>
-                    </div>
+                        <div class="profile-body pt-4 mt-3">
+                            <h5 class="fw-semibold mb-3">Subrata Poria</h5>
 
-                    <div class="offer-card">
-                        <img src="assets/images/hall/hall-4.jpg" class="img-fluid" alt="event">
-                        <div class="card-body">
-                            <h5>Neighborhood Meet & Dinner</h5>
-                            <p class="small text-muted mb-1">Sat, Oct 25 — 6:00 PM</p>
+                            <div class="text-start ps-4">
+                                <p class="mb-2">
+                                    <i class="ri-phone-fill text-primary me-2"></i> +91 98765 43210
+                                </p>
+                                <p class="mb-2">
+                                    <i class="ri-mail-fill text-danger me-2"></i> subrata@example.com
+                                </p>
+                                <p class="mb-0">
+                                    <i class="ri-map-pin-fill text-success me-2"></i> Lorem ipsum dolor sit amet Kolkata
+                                    - 700036
+                                </p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="offer-card">
-                        <img src="assets/images/hall/hall-3.jpg" class="img-fluid" alt="event">
-                        <div class="card-body">
-                            <h5>Community Dance Night</h5>
-                            <p class="small text-muted mb-1">Fri, 8:00 PM</p>
+                    <!-- Notifications Section -->
+                    <div class="card shadow-sm border-0 rounded-4 notification-card p-3">
+                        <div
+                            class="card-header bg-white border-0 d-flex align-items-center justify-content-between px-0">
+                            <h6 class="fw-semibold mb-0">Notifications</h6>
+                            <a href="#" class="text-decoration-none small text-primary">View All</a>
+                        </div>
+                        <div class="card-body p-0">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex align-items-start py-3 px-0 notification-item">
+                                    <div class="icon-wrap bg-primary-subtle text-primary me-3">
+                                        <i class="ri-chat-1-fill"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Alice</strong> sent you a new message.
+                                        <div class="text-muted small mt-1">2 mins ago</div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex align-items-start py-3 px-0 notification-item">
+                                    <div class="icon-wrap bg-success-subtle text-success me-3">
+                                        <i class="ri-money-rupee-circle-fill"></i>
+                                    </div>
+                                    <div>
+                                        You earned a <strong>Bonus Reward!</strong>
+                                        <div class="text-muted small mt-1">1 hour ago</div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex align-items-start py-3 px-0 notification-item">
+                                    <div class="icon-wrap bg-danger-subtle text-danger me-3">
+                                        <i class="ri-git-repository-private-fill"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Security Alert:</strong> Password expires soon.
+                                        <div class="text-muted small mt-1">Yesterday</div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
     </section>
 
 
 
-    <section class="hero activity section-padding">
-        <div class="container-fluid">
-            <div class="section-head d-flex justify-content-between align-items-center mb-3">
-                <h4 class="title m-0">Daily Activities</h4>
-                <div class="d-flex align-items-center gap-2">
-                    <button class="btn btn-sm btn-outline-secondary" id="activities-prev">
-                        <i class="ri-arrow-left-s-line"></i>
-                    </button>
-                    <button class="btn btn-sm btn-outline-secondary" id="activities-next">
-                        <i class="ri-arrow-right-s-line"></i>
-                    </button>
-                </div>
-            </div>
 
-            <div class="carousel-row position-relative">
-                <div class="cards-scroll" id="activitiesScroll">
 
-                    <div class="offer-card">
-                        <img src="assets/images/activity/act-1.jpg" class="img-fluid" alt="Yoga Class">
-                        <div class="card-body">
-                            <h5>Morning Yoga Session</h5>
-                            <p class="small text-muted mb-1">Mon–Fri, 6:30 AM</p>
-                        </div>
-                    </div>
-
-                    <div class="offer-card">
-                        <img src="assets/images/activity/act-2.jpg" class="img-fluid" alt="Cooking Class">
-                        <div class="card-body">
-                            <h5>Healthy Kitchen — Cooking Class</h5>
-                            <p class="small text-muted mb-1">Tue & Thu, 5:30 PM</p>
-                        </div>
-                    </div>
-
-                    <div class="offer-card">
-                        <img src="assets/images/activity/act-1.jpg" class="img-fluid" alt="Art Workshop">
-                        <div class="card-body">
-                            <h5>Creative Art Workshop</h5>
-                            <p class="small text-muted mb-1">Wed, 3:00 PM</p>
-                        </div>
-                    </div>
-
-                    <div class="offer-card">
-                        <img src="assets/images/activity/act-1.jpg" class="img-fluid" alt="Dance Session">
-                        <div class="card-body">
-                            <h5>Zumba & Dance Fitness</h5>
-                            <p class="small text-muted mb-1">Sat, 7:00 PM</p>
-                        </div>
-                    </div>
-
-                    <div class="offer-card">
-                        <img src="assets/images/activity/act-1.jpg" class="img-fluid" alt="Gardening Club">
-                        <div class="card-body">
-                            <h5>Green Fingers — Gardening Club</h5>
-                            <p class="small text-muted mb-1">Sun, 9:00 AM</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding bills">
+    <section class="section-padding bills hero">
         <div class="container-fluid">
             <div class="section-head d-flex justify-content-between align-items-center">
                 <h3 class="fw-bold m-0">Community Hall Bill Payments</h3>
@@ -213,7 +295,7 @@
             </div>
 
             <div class="table-responsive pt-2">
-                <table id="billTable" class="table table-striped align-middle">
+                <table id="billTable" class="table table-bordered align-middle">
                     <thead>
                         <tr>
                             <th>#</th>

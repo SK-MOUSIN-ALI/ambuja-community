@@ -46,7 +46,7 @@ ul {
 }
 
 .container-fluid {
-    padding: 0 14rem;
+    max-width: 96%;
 }
 
 .section-padding {
@@ -113,6 +113,7 @@ ul {
 .search-area button {
     right: 0.8rem;
 }
+
 .branding {
     width: 340px;
 }
@@ -263,3 +264,283 @@ div.table-responsive>div.dataTables_wrapper>div.row {
     position: sticky;
     top: 100px;
 }
+
+
+.profile-card {
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.profile-header {
+    background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?fit=crop&w=600&q=80') center/cover;
+    height: 130px;
+    position: relative;
+}
+
+.follow-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.follow-btn:hover {
+    background: #f1f1f1;
+}
+
+.profile-pic {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    overflow: hidden;
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.profile-body {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+.profile-body h5 {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.profile-body p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.exp-bar {
+    height: 4px;
+    width: 60%;
+    border-radius: 3px;
+    margin: 6px auto 15px;
+    background: linear-gradient(90deg, #8e44ad, #3498db, #2ecc71, #f1c40f);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+}
+
+.stats div {
+    text-align: center;
+}
+
+.stats h6 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.stats small {
+    color: #888;
+}
+
+.icons {
+    border-top: 1px solid #eee;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    font-size: 1.3rem;
+    color: #555;
+}
+
+.icons i:hover {
+    color: #000;
+    transition: 0.3s;
+}
+
+.activity .inner-contain {
+    position: relative;
+    color: var(--white-color);
+    display: block;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    height: 100%;
+    margin: 0.75rem;
+    margin-top: 0;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.activity .inner-contain img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+.activity .inner-contain::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 5%, transparent);
+}
+
+.activity .inner-contain:hover .layer {
+    bottom: 40px;
+}
+
+.activity .layer {
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+    right: 40px;
+    font-size: 0.875rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.activity .layer h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.activity .layer p {
+    color: #f1f1f1;
+}
+
+.activity .layer span {
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    font-size: 0.875rem;
+}
+
+.activity .layer span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--white-color);
+}
+
+.activity .layer span:hover::before {
+    width: 0;
+}
+
+/* Profile Card Styling */
+.profile-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card .profile-img {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #fff;
+    background-color: #fff;
+}
+
+/* Notification Section */
+.notification-card {
+    transition: box-shadow 0.25s ease;
+}
+
+.notification-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.notification-item {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.notification-item:hover {
+    background-color: #f8f9fa;
+}
+
+.icon-wrap {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1rem;
+}
+
+
+ .login-container {
+      width: 100%;
+      background: #fff;
+      overflow: hidden;
+      margin: auto;
+    }
+
+    .login-image {
+      background: url('assets/images/real-estate.jpg') center center/cover no-repeat;
+      height: 100%;
+      min-height: 480px;
+    }
+
+    .login-form {
+      padding: 60px 50px;
+    }
+
+    .login-form h3 {
+      font-weight: 700;
+      color: #343a40;
+    }
+
+    .login-form p {
+      color: #6c757d;
+      margin-bottom: 30px;
+    }
+
+    .form-control {
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+
+    .btn-primary {
+      background-color: #6c63ff;
+      border-color: #6c63ff;
+      border-radius: 8px;
+      padding: 10px;
+      font-weight: 600;
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #5a54e3;
+      border-color: #5a54e3;
+    }
+
+    @media (max-width: 767px) {
+      .login-image {
+        display: none;
+      }
+      .login-form {
+        padding: 40px 25px;
+      }
+    }
